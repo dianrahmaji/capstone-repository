@@ -1,6 +1,6 @@
 ## Issue
 
-close https://github.com/dianrahmaji/knowledge-management-dashboard/issues/
+close https://github.com/dianrahmaji/knowledge-management-repository/issues/
 
 ## Changes
 
