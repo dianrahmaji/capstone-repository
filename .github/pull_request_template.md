@@ -1,6 +1,6 @@
 ## Issue
 
-close https://github.com/dianrahmaji/knowledge-management-repository/issues/
+close https://github.com/Knowledge-Management-Capstone/knowledge-management-repository/issues/
 
 ## Changes
 
