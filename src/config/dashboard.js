@@ -1,5 +1,6 @@
 import Home from '../pages/Home';
 import Repository from '../pages/Repository';
+import RepositorySection from '../pages/RepositorySection';
 
 const dashboard = [
   {
@@ -11,6 +12,13 @@ const dashboard = [
     navigation: {
       name: 'Repository',
       path: '/repository',
+    },
+  },
+  {
+    route: { path: '/repository/:id', element: <RepositorySection /> },
+    navigation: {
+      name: 'Repository-section',
+      path: '/repository/:id',
     },
   },
 ];
