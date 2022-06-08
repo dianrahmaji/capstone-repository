@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationBar from '../components/common/NavigationBar';
 import Sidebar from '../components/common/Sidebar';
-import Card from '../components/generic/card';
+import BaseCard from '../components/generic/card/BaseCard';
 import Footer from '../components/common/Footer';
 
 function Repository() {
@@ -11,7 +11,7 @@ function Repository() {
       <div className='w-full flex flex-row flex-grow'>
         <Sidebar />
         <div className='w-full px-12 pt-12'>
-          <Card />
+          <BaseCard main={true} />
         </div>
       </div>
       <Footer />

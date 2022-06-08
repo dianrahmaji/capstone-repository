@@ -5,11 +5,11 @@ import {
   ClockIcon,
 } from '@heroicons/react/outline';
 
-function FileDetail() {
+function BaseFileDetail() {
   return (
     <div className='flex flex-row py-3 items-center h-40'>
       <DocumentTextIcon className='h-[90%] basis-1/7' />
-      <div className='flex flex-col basis-1/2 justify-around h-full'>
+      <div className='flex flex-col basis-1/2 justify-around h-full ml-6'>
         <div className='text-2xl font-semibold'>
           This is Where You Put Your Title
         </div>
@@ -23,7 +23,7 @@ function FileDetail() {
           eius?
         </div>
       </div>
-      <div className='flex justify-around flex-col basis-1/4 h-full'>
+      <div className='flex justify-around flex-col basis-1/4 h-full ml-6'>
         <div className='flex flex-row'>
           <CheckCircleIcon className='w-6 mr-2' />
           <div>Completed</div>
@@ -41,4 +41,4 @@ function FileDetail() {
   );
 }
 
-export default FileDetail;
+export default BaseFileDetail;
