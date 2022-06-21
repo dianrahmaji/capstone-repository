@@ -2,6 +2,7 @@ import Home from '../pages/Home';
 import Repository from '../pages/Repository';
 import RepositorySection from '../pages/RepositorySection';
 import SearchResults from '../pages/SearchResults';
+import FileDetail from '../pages/FileDetail';
 
 const dashboard = [
   {
@@ -27,6 +28,13 @@ const dashboard = [
     navigation: {
       name: 'Search Results',
       path: '/search-results',
+    },
+  },
+  {
+    route: { path: '/file-detail/:id', element: <FileDetail /> },
+    navigation: {
+      name: 'File Detail',
+      path: '/file-detail/:id',
     },
   },
 ];
