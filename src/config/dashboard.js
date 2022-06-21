@@ -2,7 +2,7 @@ import Home from '../pages/Home';
 import Repository from '../pages/Repository';
 import RepositorySection from '../pages/RepositorySection';
 import SearchResults from '../pages/SearchResults';
-import MemberContribution from '../pages/MemberContribution';
+import FileDetail from '../pages/FileDetail';
 
 const dashboard = [
   {
@@ -31,10 +31,10 @@ const dashboard = [
     },
   },
   {
-    route: { path: '/contribution/:id', element: <MemberContribution /> },
+    route: { path: '/file-detail/:id', element: <FileDetail /> },
     navigation: {
-      name: 'Member Contribution',
-      path: '/contribution/:id',
+      name: 'File Detail',
+      path: '/file-detail/:id',
     },
   },
 ];
