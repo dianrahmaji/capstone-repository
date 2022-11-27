@@ -3,6 +3,7 @@ import Repository from '../pages/Repository';
 import RepositorySection from '../pages/RepositorySection';
 import SearchResults from '../pages/SearchResults';
 import FileDetail from '../pages/FileDetail';
+import MemberContribution from '../pages/MemberContribution';
 
 const dashboard = [
   {
@@ -35,6 +36,13 @@ const dashboard = [
     navigation: {
       name: 'File Detail',
       path: '/file-detail/:id',
+    },
+  },
+  {
+    route: { path: '/member/:id', element: <MemberContribution /> },
+    navigation: {
+      name: 'Member Contribution',
+      path: '/member/:id',
     },
   },
 ];

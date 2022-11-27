@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import dashboard from './config/dashboard';
-
 import Home from './pages/Home';
 
 function App() {

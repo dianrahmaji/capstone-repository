@@ -1,4 +1,4 @@
-export default function InputKeyboard() {
+export default function InputKeyboard({ searchText, onChange, onSearch }) {
   return (
     <>
       <label
@@ -9,6 +9,9 @@ export default function InputKeyboard() {
       </label>
       <div className='mt-1 relative flex items-center'>
         <input
+          value={searchText}
+          onChange={onChange}
+          onKeyPress={(e) => e.key === 'Enter' && onSearch()}
           type='text'
           name='search'
           id='search'

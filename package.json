@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.26.0",
     "clsx": "^1.1.1",
+    "dotenv": "^16.0.3",
     "knowledge-management-repository": "file:",
     "react": "^17.0.2",
     "react-doc-viewer": "^0.1.5",
