@@ -11,10 +11,10 @@ const dashboard = [
     navigation: { name: 'Beranda', path: '/' },
   },
   {
-    route: { path: '/repository', element: <Repository /> },
+    route: { path: '/repository/:id', element: <Repository /> },
     navigation: {
       name: 'Repository',
-      path: '/repository',
+      path: '/repository/:id',
     },
   },
   {

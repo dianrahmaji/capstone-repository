@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar home={true} />
       <div className='max-w-md mx-auto mt-64 px-3 lg:px-0'>
         <InputKeyboard
           searchText={searchText}
