@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import NavigationBar from '../components/common/NavigationBar';
 import Sidebar from '../components/common/Sidebar';
 import BaseCard from '../components/generic/card/BaseCard';
 import Footer from '../components/common/Footer';
 import BaseFileDetail from '../components/generic/filedetail/BaseFileDetail';
 import BaseBreadcrumbs from '../components/generic/breadcrumbs/BaseBreadcrumbs';
+import { useDispatch } from 'react-redux';
+
+import { fetchSingleTeam } from '../store/actions/teamActions';
 
 function Repository() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  // const { teamLoading, singleTeamData } = useSelector((state) => state.team);
+
+  useEffect(() => {
+    dispatch(fetchSingleTeam(id));
+  }, [dispatch, id]);
+
   return (
     <div>
       <NavigationBar />
@@ -18,8 +32,8 @@ function Repository() {
           <BaseCard firstSection={true} />
           <BaseCard secondSection={true} />
           <div className='flex flex-col mt-24'>
-            <BaseFileDetail />
-            <BaseFileDetail />
+            {/* <BaseFileDetail />
+            <BaseFileDetail /> */}
           </div>
         </div>
       </div>

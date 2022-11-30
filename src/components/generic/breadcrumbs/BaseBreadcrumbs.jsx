@@ -6,7 +6,7 @@ const pages = [
   { name: 'Project Nero', href: '#', current: true },
 ];
 
-export default function Example() {
+export default function BaseBreadcrumbs() {
   return (
     <nav className='flex mb-6' aria-label='Breadcrumb'>
       <ol className='flex items-center space-x-4'>

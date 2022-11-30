@@ -7,7 +7,6 @@ import {
 } from '@heroicons/react/solid';
 
 export default function BaseStackedLists({ data }) {
-  console.log(data);
   return (
     <div className='bg-white shadow overflow-hidden sm:rounded-md'>
       <ul className='divide-y divide-gray-200'>
