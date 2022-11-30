@@ -18,10 +18,13 @@ const dashboard = [
     },
   },
   {
-    route: { path: '/repository/:id', element: <RepositorySection /> },
+    route: {
+      path: '/repository/:id/:sectionTitle',
+      element: <RepositorySection />,
+    },
     navigation: {
       name: 'Repository-section',
-      path: '/repository/:id',
+      path: '/repository/:id/:sectionTitle',
     },
   },
   {

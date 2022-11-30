@@ -1,7 +1,7 @@
 import React from 'react';
 import CardHeading from './CardHeading';
 
-function BaseCard({ main, firstSection, secondSection }) {
+function BaseCard({ main, firstSection, secondSection, data }) {
   const classNames = {
     main: 'pb-12 border-b-2 border-slate-900',
     firstSection: 'ml-8 mt-12',
@@ -16,14 +16,19 @@ function BaseCard({ main, firstSection, secondSection }) {
         (secondSection ? classNames.secondSection : '')
       }
     >
-      <CardHeading />
+      <CardHeading title={data.name} />
       <p className='text-md font-medium text-gray-900 mt-6'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima cumque
-        delectus nisi, eveniet, odio quis repudiandae commodi optio quaerat quas
-        possimus qui beatae? Quis quam maxime reprehenderit odit ex fuga!
+        {data.description}
       </p>
     </div>
   );
 }
+
+BaseCard.defaultProps = {
+  data: {
+    name: 'Default Title',
+    description: 'Default Description',
+  },
+};
 
 export default BaseCard;
