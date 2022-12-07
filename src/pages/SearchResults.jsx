@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { fetchDocument } from '../store/actions/documentActions';
-import { fetchTeam } from '../store/actions/teamActions';
+import { fetchRepository } from '../store/actions/repositoryActions';
 
 import NavigationBar from '../components/common/NavigationBar';
 import BaseFileDetail from '../components/generic/filedetail/BaseFileDetail';
@@ -18,11 +18,13 @@ function SearchResults() {
   const { documentLoading, documentData } = useSelector(
     (state) => state.document
   );
-  const { teamLoading, teamData } = useSelector((state) => state.team);
+  const { repositoryLoading, repositoryData } = useSelector(
+    (state) => state.repository
+  );
 
   useEffect(() => {
     dispatch(fetchDocument(searchText));
-    dispatch(fetchTeam(searchText));
+    dispatch(fetchRepository(searchText));
   }, [dispatch, searchText]);
 
   return (
@@ -30,7 +32,10 @@ function SearchResults() {
       <NavigationBar />
       <div className='w-full flex flex-col flex-grow pt-16 px-16'>
         <div className='text-2xl font-bold mb-6'>
-          Search results for - <span className='uppercase'>{searchText}</span>
+          Search results for -{' '}
+          <span className='uppercase text-blue-400 font-bold'>
+            {searchText}
+          </span>
         </div>
         <div className='text-4xl text-blue-400 font-bold'>Files</div>
         {documentLoading ? (
@@ -56,7 +61,7 @@ function SearchResults() {
           </div>
         )}
         <div className='text-4xl text-blue-400 font-bold'>Repositories</div>
-        {teamLoading ? (
+        {repositoryLoading ? (
           <div className='flex items-center justify-center'>
             <svg
               className='mx-3 h-5 w-5 animate-spin'
@@ -73,8 +78,8 @@ function SearchResults() {
           </div>
         ) : (
           <div className='flex flex-col gap-y-8 my-12'>
-            {teamData.map((team) => (
-              <BaseStackedLists key={team._id} data={team} />
+            {repositoryData.map((repository) => (
+              <BaseStackedLists key={repository._id} data={repository} />
             ))}
           </div>
         )}

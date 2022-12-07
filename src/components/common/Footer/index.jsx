@@ -73,9 +73,9 @@ const navigation = {
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
-    <footer className='bg-gray-50'>
+    <footer className='w-full fixed bottom-0 bg-gray-50'>
       <div className='w-full py-12 overflow-hidden sm:px-6 lg:px-8'>
         <nav
           className='-mx-5 -my-2 flex flex-wrap justify-center'
