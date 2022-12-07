@@ -10,15 +10,15 @@ export default function BaseStackedLists({ data }) {
   return (
     <div className='bg-white shadow overflow-hidden sm:rounded-md'>
       <ul className='divide-y divide-gray-200'>
-        <li key={data.id}>
+        <li key={data._id}>
           <Link
-            to={`/repository/${data._id}`}
+            to={`/repository?repository=${data._id}&root=${data.root}`}
             className='block hover:bg-gray-50'
           >
             <div className='px-4 py-4 sm:px-6'>
               <div className='flex items-center justify-between'>
                 <p className='text-sm font-medium text-indigo-600 truncate'>
-                  {data.name}
+                  {data.title}
                 </p>
                 <div className='ml-2 flex-shrink-0 flex'>
                   <p className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
@@ -48,9 +48,7 @@ export default function BaseStackedLists({ data }) {
                     className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                     aria-hidden='true'
                   />
-                  <p>
-                    Closing on <time dateTime={`datetime`}>{`close`}</time>
-                  </p>
+                  <p>something</p>
                 </div>
               </div>
             </div>
@@ -60,3 +58,12 @@ export default function BaseStackedLists({ data }) {
     </div>
   );
 }
+
+BaseStackedLists.defaultProps = {
+  data: {
+    _id: 1,
+    root: 1,
+    title: 'title',
+    status: 'status',
+  },
+};

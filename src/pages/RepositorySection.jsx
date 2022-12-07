@@ -10,16 +10,10 @@ import BaseFileDetail from '../components/generic/filedetail/BaseFileDetail';
 import BaseBreadcrumbs from '../components/generic/breadcrumbs/BaseBreadcrumbs';
 import { useDispatch } from 'react-redux';
 
-import { fetchSingleTeam } from '../store/actions/teamActions';
-
 function Repository() {
   const dispatch = useDispatch();
   const { id } = useParams();
   // const { teamLoading, singleTeamData } = useSelector((state) => state.team);
-
-  useEffect(() => {
-    dispatch(fetchSingleTeam(id));
-  }, [dispatch, id]);
 
   return (
     <div>

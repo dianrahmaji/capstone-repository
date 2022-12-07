@@ -1,3 +1,0 @@
-export const FETCH_TEAM = 'FETCH_TEAM';
-export const FETCH_SINGLE_TEAM = 'FETCH_SINGLE_TEAM';
-export const LOADING_TEAM = 'LOADING_TEAM';
