@@ -1,5 +1,7 @@
 import React from 'react';
+
 import CardHeading from './CardHeading';
+import BaseDocumentList from '../documentList/BaseDocumentList';
 
 function BaseCard({ main, firstSection, secondSection, data, id }) {
   const classNames = {
@@ -21,6 +23,7 @@ function BaseCard({ main, firstSection, secondSection, data, id }) {
       <p className='text-md font-medium text-gray-900 mt-6'>
         {data.description}
       </p>
+      <BaseDocumentList documents={data.documents} />
     </div>
   );
 }

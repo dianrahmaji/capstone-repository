@@ -55,9 +55,18 @@ function SearchResults() {
           </div>
         ) : (
           <div className='flex flex-col gap-y-8 my-12'>
-            {documentData.map((document) => (
-              <BaseFileDetail data={document} key={document._id} />
-            ))}
+            {documentData.length === 0 ? (
+              <div className='text-neutral-900 italic'>
+                Couldn't find document with keyword:{' '}
+                <span className='font-bold text-red-600 uppercase'>
+                  {searchText}
+                </span>
+              </div>
+            ) : (
+              documentData.map((document) => (
+                <BaseFileDetail data={document} key={document._id} />
+              ))
+            )}
           </div>
         )}
         <div className='text-4xl text-blue-400 font-bold'>Repositories</div>
@@ -78,9 +87,18 @@ function SearchResults() {
           </div>
         ) : (
           <div className='flex flex-col gap-y-8 my-12'>
-            {repositoryData.map((repository) => (
-              <BaseStackedLists key={repository._id} data={repository} />
-            ))}
+            {repositoryData.length === 0 ? (
+              <div className='text-neutral-900 italic'>
+                Couldn't find repository with keyword:{' '}
+                <span className='font-bold text-red-600 uppercase'>
+                  {searchText}
+                </span>
+              </div>
+            ) : (
+              repositoryData.map((repository) => (
+                <BaseStackedLists key={repository._id} data={repository} />
+              ))
+            )}
           </div>
         )}
       </div>

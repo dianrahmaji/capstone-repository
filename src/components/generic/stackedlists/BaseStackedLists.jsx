@@ -2,11 +2,15 @@ import { Link } from 'react-router-dom';
 
 import {
   CalendarIcon,
-  LocationMarkerIcon,
+  UserGroupIcon,
   UsersIcon,
+  BookOpenIcon,
 } from '@heroicons/react/solid';
 
 export default function BaseStackedLists({ data }) {
+  const date = data.startDate.split('T')[0];
+  const topics = data.team[0].topics.join(', ');
+
   return (
     <div className='bg-white shadow overflow-hidden sm:rounded-md'>
       <ul className='divide-y divide-gray-200'>
@@ -17,7 +21,7 @@ export default function BaseStackedLists({ data }) {
           >
             <div className='px-4 py-4 sm:px-6'>
               <div className='flex items-center justify-between'>
-                <p className='text-sm font-medium text-indigo-600 truncate'>
+                <p className='text-xl font-medium text-indigo-600 truncate mb-4'>
                   {data.title}
                 </p>
                 <div className='ml-2 flex-shrink-0 flex'>
@@ -29,18 +33,29 @@ export default function BaseStackedLists({ data }) {
               <div className='mt-2 sm:flex sm:justify-between'>
                 <div className='sm:flex'>
                   <p className='flex items-center text-sm text-gray-500'>
+                    <UserGroupIcon
+                      className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
+                      aria-hidden='true'
+                    />
+                    {data.team[0].name}
+                  </p>
+                  <p className='mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6'>
                     <UsersIcon
                       className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                       aria-hidden='true'
                     />
-                    department
+                    {`${data.team[0].members.length} members`}
                   </p>
-                  <p className='mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6'>
-                    <LocationMarkerIcon
+                </div>
+              </div>
+              <div className='mt-3 sm:flex sm:justify-between'>
+                <div className='sm:flex'>
+                  <p className='flex items-center text-sm text-gray-500'>
+                    <BookOpenIcon
                       className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                       aria-hidden='true'
                     />
-                    location
+                    {topics}
                   </p>
                 </div>
                 <div className='mt-2 flex items-center text-sm text-gray-500 sm:mt-0'>
@@ -48,7 +63,7 @@ export default function BaseStackedLists({ data }) {
                     className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                     aria-hidden='true'
                   />
-                  <p>something</p>
+                  <p>{date}</p>
                 </div>
               </div>
             </div>

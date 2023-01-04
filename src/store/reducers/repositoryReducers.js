@@ -4,6 +4,7 @@ import {
   LOADING_REPOSITORY,
   FETCH_FOLDER,
   LOADING_FOLDER,
+  FETCH_FOLDER_FROM_DOCUMENT,
 } from '../constants/repositoryConstants';
 
 export const repositoryReducer = (
@@ -44,6 +45,7 @@ export const folderReducer = (
   state = {
     folderLoading: false,
     folder: {},
+    document: {},
     error: null,
   },
   action
@@ -57,6 +59,14 @@ export const folderReducer = (
         folderLoading: false,
         error: null,
         folder: action.payload,
+      };
+    }
+    case FETCH_FOLDER_FROM_DOCUMENT: {
+      return {
+        folderLoading: false,
+        error: null,
+        document: action.payload.document,
+        folder: action.payload.data,
       };
     }
     default:

@@ -60,11 +60,11 @@ function Repository() {
   let idSection = 0;
 
   return (
-    <div className='flex flex-col h-screen'>
+    <div className='flex flex-col grow min-h-screen'>
       <NavigationBar />
-      <div className='w-full flex flex-row grow'>
+      <div className='w-full h-full flex flex-row grow'>
         <Sidebar navigation={navigation} />
-        <div className='w-full px-12 pt-12'>
+        <div className='w-full h-full px-12 pt-12 pb-36'>
           <h1>{'Repository Name' || singleRepositoryData.title}</h1>
           {folderLoading ? (
             <div className='flex items-center justify-center'>
