@@ -53,6 +53,9 @@ export const fetchFolderByDocumentId = (documentId) => async (dispatch) => {
       `${process.env.REACT_APP_BASE_URL}/api/folder/search/document/${documentId}`
     );
 
+    console.log(data);
+    console.log(documentId);
+
     const document = data.documents.filter((doc) => doc._id === documentId);
 
     dispatch({

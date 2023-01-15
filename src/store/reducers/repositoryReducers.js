@@ -45,6 +45,7 @@ export const folderReducer = (
   state = {
     folderLoading: false,
     folder: {},
+    repository: {},
     document: {},
     error: null,
   },
@@ -59,6 +60,9 @@ export const folderReducer = (
         folderLoading: false,
         error: null,
         folder: action.payload,
+        repository: action.payload.repositories
+          ? action.payload.repositories[0]
+          : {},
       };
     }
     case FETCH_FOLDER_FROM_DOCUMENT: {

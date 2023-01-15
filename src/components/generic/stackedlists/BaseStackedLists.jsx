@@ -9,14 +9,23 @@ import {
 
 export default function BaseStackedLists({ data }) {
   const date = data.startDate.split('T')[0];
-  const topics = data.team[0].topics.join(', ');
+  const topics =
+    data.team && data.team.length !== 0
+      ? data.team[0].topics.join(', ')
+      : 'no data';
+  const teamMembers =
+    data.team && data.team.length !== 0
+      ? `${data.team[0].members.length} members`
+      : 'no data';
+  const teamName =
+    data.team && data.team.length !== 0 ? data.team[0].name : 'no data';
 
   return (
     <div className='bg-white shadow overflow-hidden sm:rounded-md'>
       <ul className='divide-y divide-gray-200'>
         <li key={data._id}>
           <Link
-            to={`/repository?repository=${data._id}&root=${data.root}`}
+            to={`/repository/${data.root}`}
             className='block hover:bg-gray-50'
           >
             <div className='px-4 py-4 sm:px-6'>
@@ -37,14 +46,14 @@ export default function BaseStackedLists({ data }) {
                       className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                       aria-hidden='true'
                     />
-                    {data.team[0].name}
+                    {teamName}
                   </p>
                   <p className='mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6'>
                     <UsersIcon
                       className='flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400'
                       aria-hidden='true'
                     />
-                    {`${data.team[0].members.length} members`}
+                    {teamMembers}
                   </p>
                 </div>
               </div>
